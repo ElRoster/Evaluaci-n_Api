@@ -12,7 +12,7 @@ const CountSchema = new mongoose.Schema({
     },
 
     ClientDocument:{
-        type:Number,
+        type:String,
         unique:true
     },
 
@@ -25,14 +25,18 @@ const CountSchema = new mongoose.Schema({
         type:Number,
     },
 
-    AccessPasssword:{
+    AccessPassword:{
         type:String,
-        maxlength:[4,"the password must be a maximum 4 Numbers"]
+    },
+
+    Observation:{
+        type:String
     }
+
 });
 
 CountSchema.plugin(AutoIncrement,{ inc_field: 'NumberCount'});
 
-const Count = mongoose.model('Count', CountSchema, 'Count')
+const Count = mongoose.model('Count', CountSchema, 'Counts')
 
 export default Count;

@@ -5,7 +5,7 @@ import dbConnect from '../database/config.js'
 class Server {
     constructor(){
         this.app = express();
-        this.port = process.eventNames.PORT || 3000;
+        this.port = process.env.PORT || 3000;
         this.middlewares();
         this.dbConnection();
         this.routes();
@@ -31,8 +31,8 @@ class Server {
     }
 
     listen(){
-        this.app.listen(this.port,  () => {
-            console.log(`Sever IS Running`)
+        this.app.listen( process.env.PORT,  () => {
+            console.log(`Sever Is Running`)
         });
     }
 }

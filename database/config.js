@@ -1,8 +1,8 @@
-import { connect } from 'mongoose';
+import mongoose from 'mongoose';
 
 const dbConnect = async ()=>{
     try{
-        await connect (process.env.MONGO_CNN)
+        await mongoose.connect (process.env.MONGO_CNN)
         console.log('connect to database');
     }
     catch (error){
