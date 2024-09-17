@@ -1,22 +1,22 @@
 import { Router } from 'express';
 
 import {
-    CreateCount,
-    ListCount,
-    WithdrawMoney,
     Consing,
+    CreateCount,
+    DeleteCount,
+    ListCount,
     ListOne,
-    DeleteCount
+    WithdrawMoney
 } from '../controllers/CountControllers.js';
 
 const router =Router ();
 
 
-router.post('/count/create', CreateCount);
-router.get('/count/list', ListCount);
-router.get('/count/ListOne/:NumberCount', ListOne);
-router.put('/count/WithdrawMoney/:NumberCount', WithdrawMoney);
-router.put('/count/Consing/:NumberCount', Consing );
-router.delete('/count/Delete/:NumberCount', DeleteCount)
+router.post('/count/', CreateCount);
+router.get('/count/', ListCount);
+router.get('/count/:NumberCount', ListOne);
+router.put('/count/:NumberCount', WithdrawMoney);
+router.put('/count/consing/:NumberCount', Consing );
+router.delete('/count/:NumberCount', DeleteCount)
 
 export default router;
